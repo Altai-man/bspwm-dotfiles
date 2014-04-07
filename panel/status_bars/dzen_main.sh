@@ -85,7 +85,11 @@ time="${color_red}| ${color_sec1}${time_icon} ${color_main}$tim"
 # battery
 
 battery=$(acpi | sed "s/Battery 0: //g" | sed "s/[ ,a-zA-Z]//g" | sed "s/[0-9][0-9]://g" | sed "s/%[0-9][0-9]//g" | sed "s/%//g")
-if [[ $battery > 60 ]]
+
+if [[ $battery == 100 ]]
+then
+    bat=$(echo $color_sec1 ${battery_90_icon} $color_main$battery%)
+elif [[ $battery > 60 ]]
 then
     bat=$(echo $color_sec1 ${battery_90_icon} $color_main$battery%)
 elif [[ $battery > 30 ]]

@@ -14,33 +14,33 @@ curr_tag=$(bspc query -D -d)
 
 if [ $curr_tag == "1/i" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|   "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|   "
 elif [ $curr_tag == "1/ii" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|  "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|  "
 elif [ $curr_tag == "1/iii" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}| "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}| "
 elif [ $curr_tag == "1/iv" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|  "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|  "
 elif [ $curr_tag == "1/v" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|   "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|   "
 elif [ $curr_tag == "1/vi" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|  "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|  "
 elif [ $curr_tag == "1/vii" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}| "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}| "
 elif [ $curr_tag == "1/viii" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|"
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|"
 elif [ $curr_tag == "1/ix" ]
 then
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|  "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|  "
 else
-tag="${color_sec1}|${color_main}$curr_tag${color_fsec1}|   "
+tag="${color_sec1}|${color_main}$curr_tag${color_sec1}|   "
 fi
 
 # volume
@@ -59,19 +59,10 @@ fi
 volume="${color_sec1}${speaker_icon} ${color_sec2}${playback_format}"
 
 # mpd
- mpc_current=$(mpc current | sed 's/AnimeNfo Radio | Serving you the best Anime and Doujin music!: //')
+mpc_current=$(mpc current | sed 's/AnimeNfo Radio | Serving you the best Anime and Doujin music!: //')
 
 mpd="${color_sec1}${mpd_icon} ${color_main}${mpc_current}"
 
-# window title
-title=$(xtitle)
-if [[ $title != "" ]]
-then
-titl="| $title |"
-else
-titl=$title
-fi
-
-echo "$tag$volume $mpd $titl"
+echo "$tag $volume $mpd"
 
 sleep $SLEEP; done
