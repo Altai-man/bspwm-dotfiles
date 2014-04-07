@@ -16,4 +16,4 @@ Thanks to [hicolour](http://github.com/hicolour) for icons, colors(will be chang
 
 Screenshot
 ==============
-![](http://storage7.static.itmages.com/i/14/0407/h_1396857311_1032610_14a9db79ab.png)
+![](http://storage8.static.itmages.com/i/14/0407/h_1396861301_9052731_ebe248e9ef.png)
