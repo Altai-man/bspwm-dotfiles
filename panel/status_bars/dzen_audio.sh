@@ -61,7 +61,9 @@ volume="${color_sec1}${speaker_icon} ${color_sec2}${playback_format}"
 # mpd
 mpc_current=$(mpc current | sed 's/AnimeNfo Radio | Serving you the best Anime and Doujin music!: //')
 
-mpd="${color_sec1}${mpd_icon} ${color_main}${mpc_current}"
+mpc_time=$(mpc | grep / | sed 's/\[playing\] #[0-9]*\/[0-9]*   //')
+
+mpd="${color_sec1}${mpd_icon} ${color_main}${mpc_current} ${color_red}| ${color_main}${mpc_time}"
 
 echo "$tag $volume $mpd"
 
